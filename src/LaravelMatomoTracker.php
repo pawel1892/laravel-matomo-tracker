@@ -45,6 +45,9 @@ class LaravelMatomoTracker extends MatomoTracker
         $this->apiUrl = $apiUrl ?: config('matomotracker.url');
         $this->idSite = $idSite ?: config('matomotracker.idSite');
 
+        $this->requestConnectTimeout = config('matomotracker.requestConnectTimeout');
+        $this->requestTimeout = config('matomotracker.requestTimeout');
+
         $this->ecommerceItems = array();
         $this->attributionInfo = false;
         $this->eventCustomVar = false;
@@ -119,7 +122,6 @@ class LaravelMatomoTracker extends MatomoTracker
         $this->ecommerceLastOrderTimestamp = false;
 
         // Allow debug while blocking the request
-        $this->requestTimeout = 600;
         $this->doBulkRequests = false;
         $this->storedTrackingActions = array();
 

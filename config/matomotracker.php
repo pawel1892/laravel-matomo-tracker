@@ -1,7 +1,9 @@
 <?php
 
 return [
+    'requestTimeout' => env('MATOMO_TIMEOUT', '30'),
 
+    'requestConnectTimeout' => env('MATOMO_CONNECT_TIMEOUT', '5'),
     /**
      * The URL of your Matomo install
      */
